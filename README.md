@@ -1,16 +1,25 @@
 # SynOpt Research Skills
 
-Dedicated public skill repository for the SynOpt deep market research workflow.
+Dedicated public skill repository for the SynOpt deep market research and Innovation Radar proposal workflow.
 
-These seven skill packages are copied without SynOpt-specific rewriting from the upstream repository:
+These 12 skill packages are copied without SynOpt-specific rewriting from the upstream repository:
 https://github.com/alirezarezvani/claude-skills
 
-Included skills:
+## Research and evidence
+- market-research
+- competitive-intel
+- financial-analyst
+- general-counsel-advisor
+
+## Market and commercial
 - marketing-strategy-pmm
 - sales-engineer
 - pricing-strategy
 - revenue-operations
 - business-investment-advisor
+
+## Proposal and editing
+- grants
 - contract-and-proposal-writer
 - copy-editing
 
