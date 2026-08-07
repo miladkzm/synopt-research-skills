@@ -36,11 +36,21 @@ jobs:
             cp -a "/tmp/claude-skills/$src/." "$dst/"
           }
 
+          # Research and evidence
+          copy_skill "research-ops/skills/market-research" "market-research"
+          copy_skill "c-level-advisor/skills/competitive-intel" "competitive-intel"
+          copy_skill "finance/skills/financial-analyst" "financial-analyst"
+          copy_skill "c-level-advisor/skills/general-counsel-advisor" "general-counsel-advisor"
+
+          # Market and commercial
           copy_skill "marketing-skill/skills/marketing-strategy-pmm" "marketing-strategy-pmm"
           copy_skill "business-growth/skills/sales-engineer" "sales-engineer"
           copy_skill "marketing-skill/skills/pricing-strategy" "pricing-strategy"
           copy_skill "business-growth/skills/revenue-operations" "revenue-operations"
           copy_skill "finance/business-investment-advisor/skills/business-investment-advisor" "business-investment-advisor"
+
+          # Proposal and editing
+          copy_skill "research/grants/skills/grants" "grants"
           copy_skill "business-growth/skills/contract-and-proposal-writer" "contract-and-proposal-writer"
           copy_skill "marketing-skill/skills/copy-editing" "copy-editing"
 
@@ -52,17 +62,26 @@ jobs:
           cat > README.md <<EOF
           # SynOpt Research Skills
 
-          Dedicated public skill repository for the SynOpt deep market research workflow.
+          Dedicated public skill repository for the SynOpt deep market research and Innovation Radar proposal workflow.
 
-          These seven skill packages are copied without SynOpt-specific rewriting from the upstream repository:
+          These 12 skill packages are copied without SynOpt-specific rewriting from the upstream repository:
           https://github.com/alirezarezvani/claude-skills
 
-          Included skills:
+          ## Research and evidence
+          - market-research
+          - competitive-intel
+          - financial-analyst
+          - general-counsel-advisor
+
+          ## Market and commercial
           - marketing-strategy-pmm
           - sales-engineer
           - pricing-strategy
           - revenue-operations
           - business-investment-advisor
+
+          ## Proposal and editing
+          - grants
           - contract-and-proposal-writer
           - copy-editing
 
@@ -87,6 +106,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Sync seven SynOpt research skills from upstream [skip ci]"
+            git commit -m "Sync twelve SynOpt research skills from upstream [skip ci]"
             git push origin HEAD:main
           fi
