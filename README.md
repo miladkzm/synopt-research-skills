@@ -14,9 +14,11 @@ Included skills:
 - contract-and-proposal-writer
 - copy-editing
 
-Upstream commit used for this sync: \
+Upstream commit used for this sync: `aa8d778811a557a2c28ccadda4cf3d0bd028a4cc`
 
 The complete directories are retained, including any scripts, references, templates, and assets shipped with each selected skill.
+
+The upstream MIT license and attribution are preserved in `LICENSE`.
 
 ## SkillsOverMCP endpoint
 
