@@ -50,9 +50,12 @@ jobs:
           copy_skill "finance/business-investment-advisor/skills/business-investment-advisor" "business-investment-advisor"
 
           # Proposal and editing
-          copy_skill "research/grants/skills/grants" "grants"
+          copy_skill "commercial/skills/rfp-responder" "rfp-responder"
           copy_skill "business-growth/skills/contract-and-proposal-writer" "contract-and-proposal-writer"
           copy_skill "marketing-skill/skills/copy-editing" "copy-editing"
+
+          # Remove previously selected skills that no longer belong in the core set.
+          rm -rf grants
 
           if [ -f /tmp/claude-skills/LICENSE ]; then
             cp /tmp/claude-skills/LICENSE LICENSE
@@ -81,13 +84,15 @@ jobs:
           - business-investment-advisor
 
           ## Proposal and editing
-          - grants
+          - rfp-responder
           - contract-and-proposal-writer
           - copy-editing
 
           Upstream commit used for this sync: $UPSTREAM_SHA
 
           The complete directories are retained, including any scripts, references, templates, and assets shipped with each selected skill.
+
+          Note: the upstream 'grants' skill is intentionally excluded because its current scope is NIH-only and is not appropriate for a TU/e Innovation Fund proposal.
 
           The upstream MIT license and attribution are preserved in LICENSE.
 
