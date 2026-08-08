@@ -36,7 +36,11 @@ jobs:
             cp -a "/tmp/claude-skills/$src/." "$dst/"
           }
 
-          # Research and evidence
+          # Research methodology and evidence
+          copy_skill "research/deep-research/skills/deep-research" "deep-research"
+          copy_skill "research/dossier/skills/dossier" "dossier"
+          copy_skill "research/litreview/skills/litreview" "litreview"
+          copy_skill "research/patent/skills/patent" "patent"
           copy_skill "research-ops/skills/market-research" "market-research"
           copy_skill "c-level-advisor/skills/competitive-intel" "competitive-intel"
           copy_skill "finance/skills/financial-analyst" "financial-analyst"
@@ -67,10 +71,14 @@ jobs:
 
           Dedicated public skill repository for the SynOpt deep market research and Innovation Radar proposal workflow.
 
-          These 12 skill packages are copied without SynOpt-specific rewriting from the upstream repository:
+          These 16 skill packages are copied without SynOpt-specific rewriting from the upstream repository:
           https://github.com/alirezarezvani/claude-skills
 
-          ## Research and evidence
+          ## Research methodology and evidence
+          - deep-research
+          - dossier
+          - litreview
+          - patent
           - market-research
           - competitive-intel
           - financial-analyst
@@ -94,6 +102,8 @@ jobs:
 
           Note: the upstream 'grants' skill is intentionally excluded because its current scope is NIH-only and is not appropriate for a TU/e Innovation Fund proposal.
 
+          The generic research router and low-evidence trend/sentiment skills are intentionally excluded to avoid overlapping routing and source-quality rules. The dedicated deep-research and market-research skills provide the primary research workflows.
+
           The upstream MIT license and attribution are preserved in LICENSE.
 
           ## SkillsOverMCP endpoint
@@ -111,6 +121,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Sync twelve SynOpt research skills from upstream [skip ci]"
+            git commit -m "Sync sixteen SynOpt research skills from upstream [skip ci]"
             git push origin HEAD:main
           fi
